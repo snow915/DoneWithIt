@@ -6,27 +6,36 @@ import {
     View,
     SafeAreaView,
     Platform,
-    Image,
-    TouchableHighlight
+    Button,
+    Alert
 } from 'react-native';
 
 export default function App() {
-    const textPressed = () => console.log("Text pressed");
+
+    const showAlert = () => {
+        Alert.alert('My title', 'My message', [
+            { text: 'Yes', onPress: () => console.log('Yes') },
+            { text: 'No', onPress: () => console.log('No') }
+        ]);
+    }
+
+    // For android not working, only for iOS
+    const showPrompt = () => {
+        Alert.prompt('Personal data', 'Whats your name?', (text)=> console.log(text));
+    }
+
     return (
         <SafeAreaView style={[styles.container, styles.droidSafeArea]}>
             <Text>Image from assets!</Text>
-            <Image source={require('./assets/icon.png')}/>
-            <Text>Image from web</Text>
-            <TouchableHighlight onPress={() => console.log('Image pressed')}>
-                <Image
-                    fadeDuration={2000}
-                    source={{
-                        width: 200,
-                        height: 300,
-                        uri: 'https://picsum.photos/200/300'
-                    }}
-                />
-            </TouchableHighlight>
+            <Button
+                title='Show Alert'
+                onPress={ showAlert }
+            />
+            <Button
+                title='Show Prompt'
+                color='orange'
+                onPress={ showPrompt }
+            />
             <StatusBar style="auto"/>
         </SafeAreaView>
     );
