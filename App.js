@@ -3,9 +3,10 @@ import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, Platform } from 'react-native';
 
 export default function App() {
+  const textPressed = () => console.log("Text pressed");
   return (
     <SafeAreaView style={[styles.container, styles.droidSafeArea]}>
-      <Text>Let's get started!</Text>
+      <Text numberOfLines={1} onPress={textPressed}>Let's get started! wwefwefwwwfwefwefwyurtyhrttyrt rtrtyrtyrtyrthrthrth rthrthrthrthrth rthrthrthrthrt hrthrtth</Text>
       <StatusBar style="auto" />
     </SafeAreaView>
   );
