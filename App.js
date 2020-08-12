@@ -7,7 +7,7 @@ import {
     SafeAreaView,
     Platform,
     Image,
-    TouchableWithoutFeedback
+    TouchableHighlight
 } from 'react-native';
 
 export default function App() {
@@ -17,7 +17,7 @@ export default function App() {
             <Text>Image from assets!</Text>
             <Image source={require('./assets/icon.png')}/>
             <Text>Image from web</Text>
-            <TouchableWithoutFeedback onPress={() => console.log('Image pressed')}>
+            <TouchableHighlight onPress={() => console.log('Image pressed')}>
                 <Image
                     fadeDuration={2000}
                     source={{
@@ -26,7 +26,7 @@ export default function App() {
                         uri: 'https://picsum.photos/200/300'
                     }}
                 />
-            </TouchableWithoutFeedback>
+            </TouchableHighlight>
             <StatusBar style="auto"/>
         </SafeAreaView>
     );
