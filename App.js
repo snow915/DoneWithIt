@@ -1,4 +1,3 @@
-import {StatusBar} from 'expo-status-bar';
 import React from 'react';
 import {
     StyleSheet,
@@ -7,7 +6,8 @@ import {
     SafeAreaView,
     Platform,
     Button,
-    Alert
+    Alert,
+    StatusBar
 } from 'react-native';
 
 export default function App() {
@@ -25,18 +25,21 @@ export default function App() {
     }
 
     return (
-        <SafeAreaView style={[styles.container, styles.droidSafeArea]}>
-            <Text>Image from assets!</Text>
-            <Button
-                title='Show Alert'
-                onPress={ showAlert }
-            />
-            <Button
-                title='Show Prompt'
-                color='orange'
-                onPress={ showPrompt }
-            />
-            <StatusBar style="auto"/>
+        <SafeAreaView style={styles.droidSafeArea}>
+            <View style={styles.container}>
+                <Text>Image from assets!</Text>
+                <Button
+                    title='Show Alert'
+                    onPress={ showAlert }
+                />
+                <Button
+                    title='Show Prompt'
+                    color='orange'
+                    onPress={ showPrompt }
+                />
+                <StatusBar style="auto"/>
+            </View>
+
         </SafeAreaView>
     );
 }
@@ -51,6 +54,6 @@ const styles = StyleSheet.create({
 
     droidSafeArea: {
         flex: 1,
-        paddingTop: Platform.OS === 'android' ? 25 : 0
+        paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
     }
 });
