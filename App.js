@@ -19,23 +19,27 @@ export default function App() {
 const styles = StyleSheet.create({
 
     externalView: {
-        backgroundColor: 'green',
-        flex: 1
+        backgroundColor: 'white',
+        flex: 1,
+        flexDirection: 'row',  // row-reverse, column (default), column-reverse
     },
 
     firstInternalView: {
         backgroundColor: 'dodgerblue',
-        flex: 2
+        width: 100,
+        height: 100
     },
 
     secondInternalView: {
         backgroundColor: 'gold',
-        flex: 1
+        width: 100,
+        height: 100
     },
 
     thirdInternalView: {
         backgroundColor: 'tomato',
-        flex: 1
+        width: 100,
+        height: 100
     }
 
 });
