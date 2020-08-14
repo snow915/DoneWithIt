@@ -1,44 +1,41 @@
 import React from 'react';
 import {
     StyleSheet,
-    View,
-    SafeAreaView,
-    Platform,
-    StatusBar,
-    Dimensions
+    View
 } from 'react-native';
-import { useDimensions, useDeviceOrientation } from "@react-native-community/hooks";
 
 export default function App() {
 
-    console.log(useDimensions())
-    console.log(useDeviceOrientation())
-    const { landscape } = useDeviceOrientation();
-
     return (
-        <SafeAreaView style={styles.droidSafeArea}>
-            <View style={styles.container}>
-                <View style={{
-                    backgroundColor: 'dodgerblue',
-                    width: '100%',
-                    height: landscape ? '100%' : '25%'
-                }}>
-                </View>
-            </View>
-        </SafeAreaView>
+        <View style={styles.externalView}>
+            <View style={styles.firstInternalView} />
+            <View style={styles.secondInternalView} />
+            <View style={styles.thirdInternalView} />
+        </View>
     );
+
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        //alignItems: 'center',
-        //justifyContent: 'center',
+
+    externalView: {
+        backgroundColor: 'green',
+        flex: 1
     },
 
-    droidSafeArea: {
-        flex: 1,
-        paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+    firstInternalView: {
+        backgroundColor: 'dodgerblue',
+        flex: 2
+    },
+
+    secondInternalView: {
+        backgroundColor: 'gold',
+        flex: 1
+    },
+
+    thirdInternalView: {
+        backgroundColor: 'tomato',
+        flex: 1
     }
+
 });
