@@ -17,17 +17,17 @@ export default function App() {
 
                 <View style={[styles.contentsStyle, {marginBottom: 50}]}>
 
-                    <View style={styles.sectionInputOne}>
+                    <View style={styles.sectionPart}>
                         <Text>Input one</Text>
-                        <View style={styles.inputOne}></View>
+                        <View style={styles.inputView}></View>
                     </View>
 
-                    <View style={styles.sectionInputTwo}>
+                    <View style={styles.sectionPart}>
                         <Text>Input two</Text>
-                        <View style={styles.inputTwo}></View>
+                        <View style={styles.inputView}></View>
                     </View>
 
-                    <View style={styles.otherSection} />
+                    <View style={styles.sectionPart} />
 
                     <View style={styles.sectionButton}>
                         <Button title='Action button' />
@@ -110,46 +110,22 @@ const styles = StyleSheet.create({
     contentsStyle: {
         flex: 1,
         borderStyle: 'solid',
-        borderTopColor: 'black',
-        borderLeftColor: 'black',
-        borderRightColor: 'black',
-        borderBottomColor: 'black',
+        borderColor: 'black',
         borderWidth: 2
     },
 
     //CONTENT ONE
 
-    sectionInputOne: {
-        //backgroundColor: '#dbb200',
+    sectionPart: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
     },
 
-    inputOne: {
+    inputView: {
         backgroundColor: '#020100',
         width: '80%',
         height: '25%'
-    },
-
-    sectionInputTwo: {
-        //backgroundColor: '#4ddb00',
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-
-    inputTwo: {
-        backgroundColor: '#020100',
-        width: '80%',
-        height: '25%'
-    },
-
-    otherSection: {
-        //backgroundColor: '#db00be',
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
     },
 
     sectionButton: {
@@ -168,6 +144,7 @@ const styles = StyleSheet.create({
     infoContainer: {
         //backgroundColor: 'pink',
         flex: 1,
+        //flexBasis: '2%',
         paddingLeft: '2%',
         paddingRight: '2%'
     },
@@ -207,7 +184,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         borderStyle: 'solid',
         borderTopColor: 'black',
-        borderTopWidth: 2
+        borderTopWidth: 2,
     },
 
     itemsPositionsNavbar: {
